@@ -3,7 +3,7 @@ from prefect import flow
 
 @flow(log_prints=True)
 def hello():
-    print("HAHAHAHAHAAHAHHHHHAHHH! this is github actions")
+    print("HAHAHAHAHAAHAHHHHHAHHH! this is github actions again")
 
 
 if __name__ == "__main__":

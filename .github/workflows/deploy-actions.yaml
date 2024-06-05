@@ -34,7 +34,7 @@ jobs:
           PREFECT_API_KEY: ${{ secrets.PREFECT_API_KEY }}
           PREFECT_API_URL: ${{ secrets.PREFECT_API_URL }}
         run: |
-          prefect cloud login -k $PREFECT_API_KEY
+          prefect cloud login --key $PREFECT_API_KEY --workspace $PREFECT_API_URL
 
       - name: Start Prefect Worker
         run: |

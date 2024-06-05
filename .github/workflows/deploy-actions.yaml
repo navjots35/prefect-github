@@ -38,7 +38,7 @@ jobs:
 
       - name: Start Prefect Worker
         run: |
-          prefect worker start --pool "flows-actions"
+          nohup prefect worker start --pool "flows-actions" &
       
       - name: Deploy Prefect Flow
         run: |

@@ -10,5 +10,6 @@ if __name__ == "__main__":
     hello.deploy(
         name="github-deploy-actions",
         work_pool_name="github-pool",
-        image="kevingrismoreprefect/cicd-example:latest",
+        image="navjots35/prefect-actions:latest",
+        build=False
     )

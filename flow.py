@@ -10,6 +10,4 @@ if __name__ == "__main__":
     hello.deploy(
         name="github-deploy-actions",
         work_pool_name="flows-actions",
-        image="navjots35/prefect-actions:latest",
-        build=False
     )

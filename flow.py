@@ -1,13 +1,15 @@
-from prefect import flow
+import requests
+from prefect import flow, task
 
+@task
+def call_api(url):
+    response = requests.get(url)
+    print(response.status_code)
+    return response.json()
 
-@flow(log_prints=True)
-def hello():
-    print("HAHAHAHAHAAHAHHHHHAHHH! this is github actions again")
+@flow
+def api_flow(url):
+    fact_json = call_api(url)
+    return fact_json
 
-
-if __name__ == "__main__":
-    hello.deploy(
-        name="github-deploy-actions",
-        work_pool_name="flows-actions",
-    )
+print(api_flow("https://catfact.ninja/fact"))
